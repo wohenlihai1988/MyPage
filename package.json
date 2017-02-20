@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/wohenlihai1988/MyPage/issues"
   },
-  "homepage": "https://github.com/wohenlihai1988/MyPage#readme"
+  "homepage": "https://github.com/wohenlihai1988/MyPage#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "pug": "^2.0.0-beta11"
+  },
+  "devDependencies": {}
 }
