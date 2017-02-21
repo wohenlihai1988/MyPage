@@ -6,7 +6,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='description', content='')
     meta(name='author', content='')
-    title Clean Blog - Sample Post
+    title Clean Blog - About
     // Bootstrap Core CSS
     link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
     // Theme CSS
@@ -46,28 +46,21 @@ html(lang='en')
       // /.container
     // Page Header
     // Set your background image for this header on the line below.
-    header.intro-header(style="background-image: url('img/post-bg.jpg')")
+    header.intro-header(style="background-image: url('img/about-bg.jpg')")
       .container
         .row
           .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-            .post-heading
+            .page-heading
               h1 #{title}
-              h2 #{subTitle}
-              span.meta
-                | Posted by 
-                a(href='#') #{author}
-                |  on #{date}
-    // Post Content
-    article
-      .container
-        .row
-          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-           p #{p1}
-           p #{p2}
-           p #{p3}
-           p #{p4}
-           p #{p5}
-           p #{content}
+              hr.small
+              span.subheading #{subTitle}
+    // Main Content
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+          p #{p1}
+          p #{p2}
+          p #{p3}
     hr
     // Footer
     footer

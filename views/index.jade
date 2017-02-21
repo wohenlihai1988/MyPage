@@ -37,7 +37,7 @@ html(lang='en')
             li
               a(href='/index') Home
             li
-              a(href='about.html') About
+              a(href='/about') About
             li
               a(href='/post') Sample Post
             li
@@ -65,9 +65,9 @@ html(lang='en')
               h3.post-subtitle
                 | #{post1_subtitle}
             p.post-meta
-              | Posted by 
-              a(href='/aboutme') #{post1_name}
-              | #{post1_date}
+              | 
+              a(href='/aboutme') #{post1_author}
+              |   #{post1_date}
               p| #{post1_content}
           hr
           .post-preview
@@ -77,7 +77,7 @@ html(lang='en')
               h3.post-subtitle
                 | #{post2_subtitle}
             p.post-meta
-              | Posted by 
+              | 
               a(href='/aboutme') #{post2_name}
               | #{post2_date}
           hr
@@ -88,7 +88,7 @@ html(lang='en')
               h3.post-subtitle
                 | #{post3_subtitle}
             p.post-meta
-              | Posted by 
+              | 
               a(href='/aboutme') #{post3_name}
               | #{post3_date}
           hr
@@ -99,7 +99,7 @@ html(lang='en')
               h3.post-subtitle
                 | #{post4_subtitle}
             p.post-meta
-              | Posted by 
+              | 
               a(href='/aboutme') #{post4_name}
               | #{post4_date}
           hr
@@ -125,11 +125,11 @@ html(lang='en')
                     i.fa.fa-circle.fa-stack-2x
                     i.fa.fa-facebook.fa-stack-1x.fa-inverse
               li
-                a(href='#')
+                a(href='https://github.com/wohenlihai1988')
                   span.fa-stack.fa-lg
                     i.fa.fa-circle.fa-stack-2x
                     i.fa.fa-github.fa-stack-1x.fa-inverse
-            p.copyright.text-muted Copyright © Your Website 2016
+            p.copyright.text-muted Copyright © liuhuancn.coom 2017
     // jQuery
     script(src='vendor/jquery/jquery.min.js')
     // Bootstrap Core JavaScript
