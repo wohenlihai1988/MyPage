@@ -71,5 +71,5 @@ app.get('/post', function(req, res){
 app.locals.title = "custom title";
 
 var server = http.createServer(app);
-server.listen(3000);
+server.listen(80);
 console.log('server started on 3000 port')
