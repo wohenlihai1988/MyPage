@@ -33,7 +33,7 @@ app.post('/sms', function(req, res){
 	console.log("get sms post")
 	console.log(req.body.message)
 	console.log(req.body.name)
-	if(req.body.name == 'newpost'){}
+	if(req.body.name == 'newpost'){
 		fs.writeFile('posts/test.md', req.body.message, function  (err) {
 			if(err){
 				console.log(err)
@@ -83,7 +83,7 @@ app.get('/test', function(req, res){
 			})
 		}
 	});
-})
+});
 
 app.get('/post', function(req, res){
 	fs.readFile('posts/post.md', 'utf8', function(err, data){
