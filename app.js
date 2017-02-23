@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser')
 var http = require('http');
 var app = express();
 fs = require('fs');
@@ -21,8 +22,28 @@ app.get('/index', function(req, res){
 
 });
 
+app.use(bodyParser.urlencoded({extended : false}))
+
 app.get('/', function(req, res){
 	res.redirect('/index');
+});
+
+app.post('/sms', function(req, res){
+	var body = req.body.Body
+	console.log("get sms post")
+	console.log(req.body.message)
+	console.log(req.body.name)
+	if(req.body.name == 'newpost'){}
+		fs.writeFile('posts/test.md', req.body.message, function  (err) {
+			if(err){
+				console.log(err)
+			}
+		});
+	}
+
+	var body = req.body
+	res.set('Content-Type', "text/plain")
+	res.send('you send : ${body} to express')
 });
 
 app.get('/about', function(req, res){
@@ -43,7 +64,25 @@ app.get('/about', function(req, res){
 });
 
 app.get('/test', function(req, res){
-	res.render('test', {ip: req.ip})
+	fs.readFile('posts/test.md', 'utf8', function(err, data){
+		if(err){
+			res.send(404)
+		}else{
+			var out = fm.parse(data)
+			res.render('post', {
+				title: out.attributes.title,
+				subTitle: out.attributes.subTitle,
+				author: out.attributes.author,
+				date: out.attributes.date,
+				content: out.body,
+				p1: out.attributes.p1,
+				p2: out.attributes.p2,
+				p3: out.attributes.p3,
+				p4: out.attributes.p4,
+				p5: out.attributes.p5,
+			})
+		}
+	});
 })
 
 app.get('/post', function(req, res){
@@ -71,5 +110,5 @@ app.get('/post', function(req, res){
 app.locals.title = "custom title";
 
 var server = http.createServer(app);
-server.listen(80);
+server.listen(3000);
 console.log('server started on 3000 port')
