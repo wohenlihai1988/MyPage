@@ -18,6 +18,11 @@ app.get('/index', function(req, res){
 		post1_author: "刘欢",
 		post1_date: "2017.2.17",
 		post1_content: "Unity 和其他的游戏引擎比如cocos，有个很大的区别，就是代码的组织方式，如果之前没有接触过类似的方式，会觉得很奇怪。运行游戏之后连入口都找不到在哪",
+		post2_title: "写给朋友的Unity入门教程2",
+		post2_subtitle: "实用至上",
+		post2_author: "刘欢",
+		post2_date: "2017.3.1",
+		post2_content: "前面讲了Unity 代码的组织方式，但是组件化会导致一个问题就是很难找到入口，组件化之前的执行顺序也会成为问题。",
 	});
 
 });
@@ -85,8 +90,8 @@ app.get('/test', function(req, res){
 	});
 });
 
-app.get('/post', function(req, res){
-	fs.readFile('posts/post.md', 'utf8', function(err, data){
+function getPost(postName, res){
+	fs.readFile('posts/' + postName, 'utf8', function(err, data){
 		if(err){
 			res.send(404)
 		}else{
@@ -105,7 +110,19 @@ app.get('/post', function(req, res){
 			})
 		}
 	});
+}
+
+app.get('/post', function(req, res){
+	getPost("post.md", res)
 })
+
+
+
+app.get('/post1', function(req, res){
+	getPost("post1.md", res)
+})
+
+
 
 app.locals.title = "custom title";
 
