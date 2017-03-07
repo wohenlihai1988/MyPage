@@ -1,0 +1,15 @@
+doctype html
+html
+	head
+		title test
+	body
+		h1 title
+		p Hello, #{ip}
+		a(href='127.0.0.1:3000') First
+		|
+		|
+		a(href = "127.0.0.1") Second
+		|
+		|
+		-var showThird = false
+		a(class = 'button', href = showThird ? '/index' : '/test') Third

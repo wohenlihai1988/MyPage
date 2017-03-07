@@ -37,7 +37,7 @@ html(lang='en')
             li
               a(href='/index') Home
             li
-              a(href='/about') About
+              a(href='/aboutme') About
             li
               a(href='/post') Sample Post
             li
@@ -59,50 +59,23 @@ html(lang='en')
       .row
         .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
           .post-preview
-            a(href='/post')
-              h2.post-title
-                | #{post1_title}
+            - for (var x = 0; x < postTitle.length; x++)
+              - var post_title = postTitle[x]
+              - var post_subtitle = postSubTitle[x]
+              - var post_date = postDate[x]
+              - var post_content = postContent[x]
+              - var post_author = postAuthor[x]
+              - var index = x > 0 ? x : ''
+              a(href= 'post' + index)
+                h2.post-title
+                  | #{post_title}
               h3.post-subtitle
-                | #{post1_subtitle}
-            p.post-meta
+                | #{post_subtitle}
+              p.post-meta
               | 
-              a(href='/aboutme') #{post1_author}
-              |   #{post1_date}
-              p| #{post1_content}
-          hr
-          .post-preview
-            a(href='/post1')
-              h2.post-title
-                | #{post2_title}
-              h3.post-subtitle
-                | #{post2_subtitle}
-            p.post-meta
-              | 
-              a(href='/aboutme') #{post2_name}
-              | #{post2_date}
-              p| #{post2_content}
-          hr
-          .post-preview
-            a(href='/post')
-              h2.post-title
-                | #{post3_title}
-              h3.post-subtitle
-                | #{post3_subtitle}
-            p.post-meta
-              | 
-              a(href='/aboutme') #{post3_name}
-              | #{post3_date}
-          hr
-          .post-preview
-            a(href='/post')
-              h2.post-title
-                | #{post4_title}
-              h3.post-subtitle
-                | #{post4_subtitle}
-            p.post-meta
-              | 
-              a(href='/aboutme') #{post4_name}
-              | #{post4_date}
+              a(href='/aboutme') #{post_author}
+              |   #{post_date}
+              p| #{post_content}
           hr
           // Pager
           ul.pager
