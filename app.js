@@ -71,6 +71,14 @@ function initPosts(){
 		console.log(post.date)
 		contentList.push(post.content)
 		console.log(post.content)
+
+		var p = '/post' + i
+		console.log(p)
+		app.get(p, function(req, res){
+			postMgr.getPost(p + ".md", function(post){
+				res.render('post', post)
+			})
+		})
 	}
 }
 
@@ -126,24 +134,22 @@ app.get('/test', function(req, res){
 	})
 });
 
-app.get('/post', function(req, res){
-	postMgr.getPost("post.md", function(post){
-		res.render('post', post)
-	})
-})
+// app.get('/post', function(req, res){
+// 	postMgr.getPost("post.md", function(post){
+// 		res.render('post', post)
+// 	})
+// })
 
 
 
-app.get('/post1', function(req, res){
-	postMgr.getPost("post1.md", function(post){
-		res.render('post', post)
-	})
-})
-
-
+// app.get('/post1', function(req, res){
+// 	postMgr.getPost("post1.md", function(post){
+// 		res.render('post', post)
+// 	})
+// })
 
 app.locals.title = "custom title";
 
 var server = http.createServer(app);
-server.listen(80);
+server.listen(8080);
 console.log('server started on 3000 port')
