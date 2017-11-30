@@ -72,8 +72,7 @@ function initPosts(){
 		contentList.push(post.content)
 		console.log(post.content)
 
-		var p = '/post' + i
-		console.log(p)
+		let p = '/post' + (i + 1)
 		app.get(p, function(req, res){
 			postMgr.getPost(p + ".md", function(post){
 				res.render('post', post)

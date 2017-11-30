@@ -65,7 +65,7 @@ html(lang='en')
               - var post_date = postDate[x]
               - var post_content = postContent[x]
               - var post_author = postAuthor[x]
-              - var index = x > 0 ? x : ''
+              - var index = x + 1
               a(href= 'post' + index)
                 h2.post-title
                   | #{post_title}
