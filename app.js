@@ -122,6 +122,10 @@ app.get('/aboutme', function(req, res){
 	});
 });
 
+// app.get('/brush', function(req, res){
+	
+// });
+
 app.get('/test', function(req, res){
 	postMgr.getAllPosts(function(list){
 		var str = ""
