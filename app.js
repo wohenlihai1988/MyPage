@@ -154,5 +154,6 @@ app.get('/test', function(req, res){
 app.locals.title = "custom title";
 
 var server = http.createServer(app);
-server.listen(8080);
-console.log('server started on 3000 port')
+var port = 8080
+server.listen(port);
+console.log('server started on ' + port)
